@@ -86,14 +86,6 @@ export default {
     0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
-.fa-plus,
-.fa-minus {
-  // font-size: 1rem;
-}
-.fa-caret-up,
-.fa-caret-down {
-  // font-size: 1rem;
-}
 .counter {
   display: flex;
   justify-content: center;
@@ -114,6 +106,7 @@ export default {
   width: calc(100vw / 7);
   height: auto;
   position: absolute;
+  padding: 4px;
 }
 
 .none {
