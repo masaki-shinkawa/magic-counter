@@ -4,9 +4,7 @@ import router from './router';
 import store from './store';
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
-import VueAdsense from 'vue-adsense';
 
-Vue.component('adsense', VueAdsense);
 Vue.config.productionTip = false;
 
 Vue.use(VueMaterial);

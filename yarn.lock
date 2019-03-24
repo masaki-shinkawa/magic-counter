@@ -8152,11 +8152,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-adsense@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-adsense/-/vue-adsense-1.0.1.tgz#6626772627071f9d7449b2558547a34ceca42c1f"
-  integrity sha1-ZiZ3JicHH510SbJVhUejTOykLB8=
-
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/vue-eslint-parser/download/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
