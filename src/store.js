@@ -24,7 +24,7 @@ export default new Vuex.Store({
   // ここでしかstateを更新してはいけない
   mutations: {
     setCounter(state, payload) {
-      state.counter[payload.index] = payload.value;
+      Vue.set(state.counter, payload.index, payload.value);
     }
   },
 
@@ -33,6 +33,14 @@ export default new Vuex.Store({
   actions: {
     async initializeCounter({ commit }, index) {
       commit("setCounter", { index, value: 0 });
+    },
+    async clearCounter({ commit }, index) {
+      commit("setCounter", { index, value: 0 });
+    },
+    async allClearCounter({ state, commit }) {
+      Object.keys(state.counter).forEach((counter, index) => {
+        commit("setCounter", { index, value: 0 });
+      });
     },
     async incrementCounter({ state, commit }, index) {
       const counter = state.counter[index];
