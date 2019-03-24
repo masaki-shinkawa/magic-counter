@@ -106,7 +106,7 @@ export default {
   width: calc(100vw / 7);
   height: auto;
   position: absolute;
-  padding: 4px;
+  padding: 2px;
 }
 
 .none {

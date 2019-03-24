@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
+    "@vue/cli-plugin-pwa": "^3.5.1",
     "vue": "^2.6.6",
+    "vue-adsense": "^1.0.1",
     "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^3.0.1",
     "vue-smooth-picker": "^0.3.9",
