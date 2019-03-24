@@ -1,54 +1,66 @@
 <template>
-  <div :class="counterClass">
-    <button class="btn-real" @click="incrementCounter">
-      <i class="fas fa-plus"></i>
-    </button>
-    <p class="counter__value">{{counter}}</p>
-    <button class="btn-real" @click="decrementCounter">
-      <i class="fas fa-minus"></i>
-    </button>
+  <div class="md-layout-item">
+    <img :class="counterClass" src="../assets/image/card.jpg" />
+    <div v-show="isNone" class="counter">
+      <button class="btn-clear" @click="incrementCounter">
+        <i class="fas fa-caret-up"></i>
+      </button>
+      <p class="counter__value">{{ counter }}</p>
+      <button class="btn-clear" @click="decrementCounter">
+        <i class="fas fa-caret-down"></i>
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
-import config from "../config";
+import config from '../config';
 
 export default {
-  name: "counter",
+  name: 'counter',
   props: {
-    index: Number
+    index: Number,
   },
   created() {
-    this.$store.dispatch("initializeCounter", this.index);
+    this.$store.dispatch('initializeCounter', this.index);
   },
   data: () => {
     return {
-      counter: 0
+      counter: 0,
     };
   },
   computed: {
     counterClass() {
-      const counterClass = { counter: true };
+      const counterClass = { card__image: true };
       counterClass[config.field.type[this.index]] = true;
-      console.warn(counterClass);
 
       return counterClass;
-    }
+    },
+    isNone() {
+      return config.field.type[this.index] !== 'none';
+    },
   },
   methods: {
     incrementCounter() {
-      this.$store.dispatch("incrementCounter", this.index);
+      this.$store.dispatch('incrementCounter', this.index);
       this.counter = this.$store.getters.getCounter(this.index);
     },
     decrementCounter() {
-      this.$store.dispatch("decrementCounter", this.index);
+      this.$store.dispatch('decrementCounter', this.index);
       this.counter = this.$store.getters.getCounter(this.index);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.btn-clear {
+  border: solid 0;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .btn-real {
   display: inline-block;
   text-decoration: none;
@@ -78,44 +90,65 @@ export default {
 .fa-minus {
   font-size: 1rem;
 }
+.fa-caret-up,
+.fa-caret-down {
+  font-size: 1rem;
+}
 .counter {
-  // border: solid 1px;
-  border-radius: 5px;
-  padding: 0.25rem;
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
 
   .counter__value {
     font-size: 1rem;
     padding: 0.25rem;
     background-color: white;
-    margin: 0.5rem 0.25rem;
+    margin: 0;
+    width: 100%;
   }
 }
+.card__image {
+  width: calc(100vw / 7);
+  height: auto;
+  position: absolute;
+}
+
 .none {
   display: none;
 }
 .deck {
-  background-color: brown;
-} // デッキ
+  // デッキ
+  filter: hue-rotate(340deg);
+}
 .magic {
-  background-color: green;
-} // 魔法罠
+  // 魔法罠
+  filter: hue-rotate(90deg);
+}
 .extra {
-  background-color: purple;
-} // エクストラ
+  // エクストラ
+  filter: hue-rotate(240deg);
+}
 .graveyard {
-  background-color: gray;
-} // 墓地
+  // 墓地
+  filter: grayscale(100%);
+}
 .monster {
-  background-color: brown;
-} // モンスター
+  // モンスター
+  filter: hue-rotate(0deg);
+}
 .field {
-  background-color: lightseagreen;
-} // フィールド魔法
+  // フィールド魔法
+  filter: hue-rotate(140deg) brightness(1.5);
+}
 .banish {
-  background-color: whitesmoke;
-} // 除外
+  // 除外
+  filter: grayscale(100%) brightness(2);
+}
 .link {
-  background-color: blue;
-} // リンクエリア
+  // リンクエリア
+  filter: hue-rotate(180deg) brightness(1.8);
+}
 </style>
