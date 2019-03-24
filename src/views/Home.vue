@@ -11,27 +11,27 @@
 </template>
 
 <script>
-import Counter from '../components/Counter';
-import config from '../config';
+import Counter from "../components/Counter";
+import config from "../config";
 
 export default {
-  name: 'home',
+  name: "home",
   data: () => {
     return {
       field: {
         x: config.field.x,
-        y: config.field.y,
-      },
+        y: config.field.y
+      }
     };
   },
   components: {
-    Counter,
+    Counter
   },
   methods: {
     getIndex(x, y) {
       return x + (y - 1) * config.field.y - 1;
-    },
-  },
+    }
+  }
 };
 </script>
 

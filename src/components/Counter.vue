@@ -14,21 +14,21 @@
 </template>
 
 <script>
-import config from '../config';
-import { cardImage } from '../constants/images';
+import config from "../config";
+import { cardImage } from "../constants/images";
 
 export default {
-  name: 'counter',
+  name: "counter",
   props: {
-    index: Number,
+    index: Number
   },
   created() {
-    this.$store.dispatch('initializeCounter', this.index);
+    this.$store.dispatch("initializeCounter", this.index);
   },
   data: () => {
     return {
       counter: 0,
-      cardImage,
+      cardImage
     };
   },
   computed: {
@@ -39,19 +39,19 @@ export default {
       return counterClass;
     },
     isNone() {
-      return config.field.type[this.index] !== 'none';
-    },
+      return config.field.type[this.index] !== "none";
+    }
   },
   methods: {
     incrementCounter() {
-      this.$store.dispatch('incrementCounter', this.index);
+      this.$store.dispatch("incrementCounter", this.index);
       this.counter = this.$store.getters.getCounter(this.index);
     },
     decrementCounter() {
-      this.$store.dispatch('decrementCounter', this.index);
+      this.$store.dispatch("decrementCounter", this.index);
       this.counter = this.$store.getters.getCounter(this.index);
-    },
-  },
+    }
+  }
 };
 </script>
 

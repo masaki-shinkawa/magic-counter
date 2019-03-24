@@ -1,4 +1,4 @@
-# pokemon-zukan
+# magic-counter2
 
 ## Project setup
 ```
