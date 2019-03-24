@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  font-size: 3rem;
+  font-size: 1.5rem;
   height: 4rem;
   background-color: white;
   display: flex;
