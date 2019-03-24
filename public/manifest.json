@@ -1,6 +1,6 @@
 {
-  "name": "pwa",
-  "short_name": "pwa",
+  "name": "魔力カウンター",
+  "short_name": "魔力カウンター",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

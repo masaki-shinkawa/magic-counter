@@ -1,6 +1,6 @@
 <template>
   <div class="md-layout-item">
-    <img :class="counterClass" src="../assets/image/card.jpg" />
+    <img :class="counterClass" :src="cardImage" />
     <div v-show="isNone" class="counter">
       <button class="btn-clear" @click="incrementCounter">
         <i class="fas fa-caret-up"></i>
@@ -15,6 +15,7 @@
 
 <script>
 import config from '../config';
+import { cardImage } from '../constants/images';
 
 export default {
   name: 'counter',
@@ -27,6 +28,7 @@ export default {
   data: () => {
     return {
       counter: 0,
+      cardImage,
     };
   },
   computed: {
