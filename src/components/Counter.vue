@@ -88,11 +88,11 @@ export default {
 }
 .fa-plus,
 .fa-minus {
-  font-size: 1rem;
+  // font-size: 1rem;
 }
 .fa-caret-up,
 .fa-caret-down {
-  font-size: 1rem;
+  // font-size: 1rem;
 }
 .counter {
   display: flex;

@@ -3,9 +3,7 @@
     <template v-for="(y, yindex) in field.x">
       <div :key="yindex" class="md-layout">
         <template v-for="(x, xindex) in field.y">
-          <!-- <div :key="xindex" class="md-layout-item"> -->
           <counter :key="`${xindex}-${yindex}`" :index="getIndex(x, y)" />
-          <!-- </div> -->
         </template>
       </div>
     </template>
@@ -44,6 +42,6 @@ export default {
   align-items: center; /* 子要素をflexboxにより中央に配置する */
 }
 .md-layout {
-  height: calc(100vh / 6);
+  height: calc(100vw / 7 * 1.434);
 }
 </style>
