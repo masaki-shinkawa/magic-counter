@@ -3,7 +3,10 @@
     <template v-for="(y, yindex) in field.x">
       <div :key="yindex" class="md-layout">
         <template v-for="(x, xindex) in field.y">
-          <counter :key="`${xindex}-${yindex}`" :index="getIndex(x, y)"></counter>
+          <counter
+            :key="`${xindex}-${yindex}`"
+            :index="getIndex(x, y)"
+          ></counter>
         </template>
       </div>
     </template>
