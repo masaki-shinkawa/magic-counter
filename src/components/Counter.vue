@@ -86,7 +86,7 @@ export default {
     clearCountStart() {
       this.clearThreadId = setTimeout(() => {
         this.$store.dispatch("clearCounter", this.index);
-      }, 1000);
+      }, config.counter.resetDelay);
     },
     clearCountEnd() {
       clearTimeout(this.clearThreadId);

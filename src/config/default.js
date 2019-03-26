@@ -43,6 +43,7 @@ export default {
   counter: {
     initialValue: 0,
     maxValue: 99,
-    minValue: 0
+    minValue: 0,
+    resetDelay: 500
   }
 };
