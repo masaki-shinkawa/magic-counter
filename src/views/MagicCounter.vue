@@ -1,8 +1,8 @@
 <template>
   <section>
     <toolbar-wrapper />
-    <button-group></button-group>
     <field></field>
+    <button-group></button-group>
   </section>
 </template>
 
