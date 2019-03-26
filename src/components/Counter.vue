@@ -113,6 +113,7 @@ export default {
 }
 .counter__v-chip {
   margin: 0;
+  user-select: none;
 }
 .counter__controler {
   flex: 1;
