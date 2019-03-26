@@ -1,16 +1,11 @@
 <template>
-  <div class="field">
-    <template v-for="(y, yindex) in field.x">
-      <div :key="yindex" class="md-layout">
-        <template v-for="(x, xindex) in field.y">
-          <counter
-            :key="`${xindex}-${yindex}`"
-            :index="getIndex(x, y)"
-          ></counter>
-        </template>
-      </div>
-    </template>
-  </div>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <template v-for="(x, index) in 35">
+        <counter :key="`${index}`" :index="index" />
+      </template>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

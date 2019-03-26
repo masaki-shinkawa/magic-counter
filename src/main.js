@@ -3,16 +3,13 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Vuetify from "vuetify";
-import VueMaterial from "vue-material";
 import VueAnalytics from "vue-analytics";
 import "vuetify/dist/vuetify.min.css";
-import "vue-material/dist/vue-material.min.css";
 import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 
 Vue.use(Vuetify);
-Vue.use(VueMaterial);
 Vue.use(VueAnalytics, { id: "UA-136786420-1", router });
 
 new Vue({

@@ -1,7 +1,9 @@
 <template>
-  <div class="md-layout">
-    <button class="md-layout-item" @click="allClick">全てクリア</button>
-  </div>
+  <v-layout align-center>
+    <v-flex xs12 sm12 text-xs-center>
+      <v-btn small color="error" @click="allClick">全てクリア</v-btn>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -14,10 +16,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.md-layout-item {
-  margin: 0.5rem;
-  background-color: lightgray;
-}
-</style>

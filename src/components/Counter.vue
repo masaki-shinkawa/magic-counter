@@ -1,20 +1,37 @@
 <template>
-  <div class="md-layout-item">
-    <img :class="counterClass" :src="cardImage" />
-    <div
+  <div class="card">
+    <v-img
       v-show="isNone"
-      class="counter"
+      :class="counterClass"
+      :src="getImage"
+      :aspect-ratio="1 / 1.424"
       @touchstart="clearCountStart"
       @touchend="clearCountEnd"
     >
-      <button class="btn-clear" @click="incrementCounter">
-        <i class="fas fa-caret-up"></i>
-      </button>
-      <p class="counter__value">{{ counter }}</p>
-      <button class="btn-clear" @click="decrementCounter">
-        <i class="fas fa-caret-down"></i>
-      </button>
-    </div>
+      <div class="btn-group">
+        <v-btn
+          flat
+          icon
+          color="primary"
+          class="counter__controler"
+          @click="incrementCounter"
+        >
+          <v-icon>add_circle</v-icon>
+        </v-btn>
+        <div class="text-xs-center">
+          <v-chip class="counter__v-chip">{{ counter }}</v-chip>
+        </div>
+        <v-btn
+          flat
+          icon
+          color="error"
+          class="counter__controler"
+          @click="decrementCounter"
+        >
+          <v-icon>remove_circle</v-icon>
+        </v-btn>
+      </div>
+    </v-img>
   </div>
 </template>
 
@@ -49,6 +66,9 @@ export default {
     },
     counter() {
       return this.$store.getters.getCounter(this.index);
+    },
+    getImage() {
+      return cardImage[config.field.type[this.index]];
     }
   },
   methods: {
@@ -71,65 +91,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.counter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0 0.2rem;
-
-  .counter__value {
-    font-size: 1rem;
-    padding: 0.25rem;
-    background-color: white;
-    margin: 0;
-    width: 100%;
-  }
+.card {
+  width: calc(100% / 7);
+}
+.v-btn {
+  margin: 0;
+}
+.counter__value {
+  background-color: white;
+  position: absolute;
 }
 .card__image {
-  width: calc(100vw / 7);
+  // width: calc(100vw / 7);
+  width: 100%;
   height: auto;
-  position: absolute;
-  padding: 2px;
+  position: relative;
 }
-
+.counter__v-chip {
+  height: 16px;
+  margin: 4px 0;
+}
+.counter__controler {
+  height: 24px;
+}
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .none {
   display: none;
-}
-.deck {
-  // デッキ
-  filter: hue-rotate(340deg);
-}
-.magic {
-  // 魔法罠
-  filter: hue-rotate(90deg);
-}
-.extra {
-  // エクストラ
-  filter: hue-rotate(240deg);
-}
-.graveyard {
-  // 墓地
-  filter: grayscale(100%);
-}
-.monster {
-  // モンスター
-  filter: hue-rotate(0deg);
-}
-.field {
-  // フィールド魔法
-  filter: hue-rotate(140deg) brightness(1.5);
-}
-.banish {
-  // 除外
-  filter: grayscale(100%) brightness(2);
-}
-.link {
-  // リンクエリア
-  filter: hue-rotate(180deg) brightness(1.8);
 }
 </style>
