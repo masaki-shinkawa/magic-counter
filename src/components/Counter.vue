@@ -102,17 +102,15 @@ export default {
   position: absolute;
 }
 .card__image {
-  // width: calc(100vw / 7);
   width: 100%;
   height: auto;
   position: relative;
 }
 .counter__v-chip {
-  height: 16px;
-  margin: 4px 0;
+  margin: 0;
 }
 .counter__controler {
-  height: 24px;
+  flex: 1;
 }
 .btn-group {
   display: flex;
@@ -120,6 +118,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .none {
   display: none;
