@@ -19,7 +19,9 @@
           <v-icon>add_circle</v-icon>
         </v-btn>
         <div class="text-xs-center">
-          <v-chip class="counter__v-chip">{{ counter }}</v-chip>
+          <v-chip :light="isCounter" class="counter__v-chip">{{
+            counter
+          }}</v-chip>
         </div>
         <v-btn
           flat
@@ -69,6 +71,9 @@ export default {
     },
     getImage() {
       return cardImage[config.field.type[this.index]];
+    },
+    isCounter() {
+      return this.$store.getters.getCounter(this.index) > 0;
     }
   },
   methods: {
